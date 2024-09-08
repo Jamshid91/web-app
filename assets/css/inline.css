@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+:host, body {
+    font-family: "Lato", system-ui;
+    font-feature-settings: "onum" off, "pnum" off, "lnum" on, "tnum" on;
+    -moz-font-feature-settings: "onum=0, pnum=0, lnum=1, tnum=1";       /* Firefox */
+    -webkit-font-feature-settings: "onum" off, "pnum" off, "lnum" on, "tnum" on;  /* WebKit */
+    -o-font-feature-settings: "onum" off, "pnum" off, "lnum" on, "tnum" on;  
+}
+
+.check-lang .lang-list {
+    display: none;
+}
+
+.showLang .lang-list {
+    display: block;
+}
+
+.showLang .arrow {
+    transform: rotate(180deg);
+}
+
+
+.switch-btn {
+    width: 66px;
+    height: 34px;
+    padding: 0 6px;
+}
+.switch-btn::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 3;
+    transition: .3s linear;
+}
+.clickSwitch::before {
+    left: 38px;
+}
+
+.swiper-pagination-bullet {
+    opacity: 1;
+    background: #D9D9D9;
+    width: 7px;
+    height: 7px;
+    transition: .3s all;
+}
+
+.dark .swiper-pagination-bullet {
+    background: #656565;
+}
+
+.swiper-pagination-bullet-active {
+    width: 45px;
+    border-radius: 30px;
+}
+.popUp-content {
+    animation: popUp-anim 0.3s linear;
+}
+
+.popUpHide {
+  animation: popUp-anim-hide 0.5s linear !important;
+}
+
+.participants li {
+    margin-top: 2px;
+}
+
+.participants li .avatar {
+    background: #D5DDFF;
+}
+
+.participants li:nth-child(even) .avatar {
+    background: #7E77F9;
+}
+.participants li:nth-child(3n+1) .avatar {
+    background: #ACB0FF;
+}
+.bonus-box::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 10px;
+    width: 3px;
+    height: 85%;
+    background: #7E77F9;
+}
+.bonus {
+    padding-left: 40px;
+    margin-bottom: 40px;
+    position: relative;
+}
+.bonus::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #7E77F9;
+    position: absolute;
+    left: 8px;
+    top: 10px;
+}
+.bonus:last-child {
+    margin-bottom: 0;
+}
+.bonus:last-child::before {
+    display: none;
+}
+
+
+@keyframes popUp-anim {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  @keyframes popUp-anim-hide {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(0);
+    }
+  }
